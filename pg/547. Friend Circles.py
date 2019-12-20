@@ -15,6 +15,24 @@ class Solution:
                 visited[j] = 1
                 self.dfs(M, visited, j)
 
+# dfs iterative
+class Solution3:
+    def findCircleNum(self, M: List[List[int]]) -> int:
+        result = 0
+        visited = [0] * len(M)
+        stack = []
+        for i in range(len(M)):
+            if visited[i] == 0:
+                stack.append(i)
+                while stack:
+                    out = stack.pop()
+                    visited[out] = 1
+                    for j in range(len(M)):
+                        if visited[j] == 0 and M[out][j] == 1:
+                            stack.append(j)
+                result += 1
+        return result
+
 # bfs
 from collections import deque
 class Solution2:
