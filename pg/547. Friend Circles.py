@@ -1,6 +1,6 @@
 # dfs recursive
 class Solution:
-    def findCircleNum(self, M: List[List[int]]) -> int:
+    def findCircleNum(self, M):
         result = 0
         visited = [0] * len(M)
         for i in range(len(M)):
@@ -17,7 +17,7 @@ class Solution:
 
 # dfs iterative
 class Solution3:
-    def findCircleNum(self, M: List[List[int]]) -> int:
+    def findCircleNum(self, M):
         result = 0
         visited = [0] * len(M)
         stack = []
@@ -36,7 +36,7 @@ class Solution3:
 # bfs
 from collections import deque
 class Solution2:
-    def findCircleNum(self, M: List[List[int]]) -> int:
+    def findCircleNum(self, M):
         result = 0
         visited = [0] * len(M)
         q = deque([])
